@@ -1,8 +1,10 @@
-import pygame,risovanie
+import pygame,risovanie,djoystik,time
 
 while 1 == 1:
-    pygame.event.get()
+    time.sleep(1/60)
+    djoystik.xbox()
     risovanie.fp()
+
 
 
 
