@@ -13,16 +13,19 @@ def izmeni_kartinku(kartinka, shirina, visota, uberi_cvet, porog):
     return q2
 
 screen = pygame.display.set_mode([1000, 700])
-tynk1 = pygame.image.load("photo/RED TANK.jpg")
+tynk1 = pygame.image.load("photo/d-a1.jpg")
 tynk1=izmeni_kartinku(tynk1,58,68,[255,255,255],20)
-tynk2 = pygame.image.load("photo/d-a1.jpg")
+tynk2 = pygame.image.load("photo/RED TANK.jpg")
 tynk2=izmeni_kartinku(tynk2,58,68,[255,255,255],20)
+tynk2=pygame.transform.rotate(tynk2,180)
 
 def fp():
     screen.fill([0,0,255])
+    one1 = pygame.transform.rotate(tynk1, zakona.grad1)
+    two2 = pygame.transform.rotate(tynk2, zakona.grad2)
+    screen.blit(one1, zakona.one)
+    screen.blit(two2, zakona.two)
 
-    screen.blit(tynk1, zakona.one)
-    screen.blit(tynk2, [122, 45])
     pygame.display.flip()
 
 
