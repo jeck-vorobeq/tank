@@ -15,9 +15,12 @@ def izmeni_kartinku(kartinka, shirina, visota, uberi_cvet, porog):
 screen = pygame.display.set_mode([1000, 700])
 tynk1 = pygame.image.load("photo/d-a1.jpg")
 tynk1=izmeni_kartinku(tynk1,58,68,[255,255,255],20)
-tynk2 = pygame.image.load("photo/RED TANK.jpg")
+tynk2 = pygame.image.load("photo/RE.jpg")
 tynk2=izmeni_kartinku(tynk2,58,68,[255,255,255],20)
-tynk2=pygame.transform.rotate(tynk2,180)
+hp1 = pygame.image.load("photo/serdce.jpg")
+hp1 = izmeni_kartinku(hp1, 58, 68, [255, 255, 255], 20)
+hp2 = pygame.image.load("photo/serdcegreen.jpeg")
+hp2 = izmeni_kartinku(hp2, 58, 68, [255, 255, 255], 20)
 
 def fp():
     screen.fill([0,0,255])
@@ -26,6 +29,17 @@ def fp():
     screen.blit(one1, zakona.one)
     screen.blit(two2, zakona.two)
 
+
+    q = 0
+    dz=[*range(zakona.hp1)]
+    for zd in dz:
+        screen.blit(hp1, [100 + q, 3])
+        q += 50
+    dz2 = range(zakona.hp2)
+    q = 0
+    for zd in dz2:
+        screen.blit(hp2, [610 + q, 630])
+        q += 50
     pygame.display.flip()
 
 
