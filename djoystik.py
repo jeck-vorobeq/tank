@@ -20,6 +20,7 @@ def xbox():
     elif  keys[pygame.K_LEFT]:
         zakona.grad1 = 90
         zakona.one.x-=3
+        zakona.granici()
 
 
     if keys[pygame.K_w]:
