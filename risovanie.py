@@ -29,8 +29,9 @@ hp2 = pygame.image.load("photo/serdcegreen.jpeg")
 hp2 = izmeni_kartinku(hp2, 58, 68, [255, 255, 255], 20)
 pula = pygame.image.load("photo/pula.png")
 pula = izmeni_kartinku(pula,18,58,[230,230,230],50)
+
 def fps():
-    screen.fill([0,0,0])
+    screen.fill([8,8,8])
     screen.blit(phon, [0, 0])
     one1 = pygame.transform.rotate(tynk1, zakona.grad1)
     two2 = pygame.transform.rotate(tynk2, zakona.grad2)
@@ -38,8 +39,11 @@ def fps():
     screen.blit(baz2, zakona.baz2)
     screen.blit(one1, zakona.one)
     screen.blit(two2, zakona.two)
+    if zakona.pularect is not None:
+        #screen.blit(pula, zakona.pularect)
+        pygame.draw.rect(screen, [200,2,20], zakona.pularect, 1)
 
-    #pygame.draw.rect(screen,[200,2,20],zakona.one,1)
+
 
     q = 0
     dz=[*range(zakona.hp1)]

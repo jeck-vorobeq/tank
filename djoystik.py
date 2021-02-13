@@ -20,6 +20,9 @@ def xbox():
     elif  keys[pygame.K_LEFT]:
         zakona.grad1 = 90
         zakona.left_right_tank(-3,zakona.one)
+    elif pygame.key.get_mods() & pygame.KMOD_RCTRL:
+        zakona.vestrel()
+
 
     if keys[pygame.K_w]:
         zakona.grad2 = 0
