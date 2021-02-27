@@ -8,13 +8,13 @@ baz2=pygame.Rect(850,630,100,40)
 
 grad1=0
 grad2=180
-pulagrad=0
+pula=None
+
 
 hp1=3
 hp2=3
 
-pula=6
-pularect=None
+pulu=6
 def granici(tank):
     if tank.left <=0:
         tank.x=0
@@ -37,7 +37,7 @@ def left_right_tank(move,tank):
     granici(tank)
 
 def vestrel(gradus,tank):
-    global pularect,pulagrad
+    global pula
     if gradus == 90:
         pulagrad = 90
         pularect=pygame.Rect(tank.left-30, tank.centery-10, 30, 20)
@@ -54,4 +54,31 @@ def vestrel(gradus,tank):
         pulagrad = 180
         pularect.top = tank.bottom
         pularect.centerx = tank.centerx
+
+    pula={"rect":pularect,"grad":pulagrad}
+
+
+def polet_puli():
+
+    r=pula["rect"]
+    r.x+=2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

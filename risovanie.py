@@ -35,14 +35,17 @@ def fps():
     screen.blit(phon, [0, 0])
     one1 = pygame.transform.rotate(tynk1, zakona.grad1)
     two2 = pygame.transform.rotate(tynk2, zakona.grad2)
-    gradpula= pygame.transform.rotate(pula, zakona.pulagrad)
     screen.blit(baz1, zakona.baz1)
     screen.blit(baz2, zakona.baz2)
     screen.blit(one1, zakona.one)
     screen.blit(two2, zakona.two)
-    if zakona.pularect is not None:
-        screen.blit(gradpula, zakona.pularect)
-        pygame.draw.rect(screen, [200,2,20], zakona.pularect, 1)
+
+    #riss pula
+    if zakona.pula is not None:
+        #
+        gradpula= pygame.transform.rotate(pula, zakona.pula["grad"])
+        screen.blit(gradpula, zakona.pula["rect"])
+        pygame.draw.rect(screen, [200,2,20], zakona.pula["rect"], 1)
 
 
 
@@ -56,15 +59,15 @@ def fps():
     for zd in dz2:
         screen.blit(hp2, [700 + q, 630])
         q+=50
-    puli = [*range(zakona.pula)]
+    puli = [*range(zakona.pulu)]
     for zd in puli:
         screen.blit(pula, [100 + q, 3])
         q += 50
-    puli2 = range(zakona.pula)
+    puli2 = range(zakona.pulu)
     q = 0
     for zd in puli2:
-         screen.blit(pula, [700 - q, 630])
-         q += 50
+        screen.blit(pula, [700 - q, 630])
+        q += 50
     pygame.display.flip()
 
 
