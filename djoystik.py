@@ -24,6 +24,7 @@ def xbox():
         zakona.vestrel(zakona.grad1,zakona.one)
 
 
+
     if keys[pygame.K_w]:
         zakona.grad2 = 0
         zakona.up_down_tank(-3, zakona.two)
@@ -38,6 +39,7 @@ def xbox():
         zakona.left_right_tank(-3, zakona.two)
     elif pygame.key.get_mods() & pygame.KMOD_LSHIFT:
         zakona.vestrel(zakona.grad2, zakona.two)
+
 
 
 

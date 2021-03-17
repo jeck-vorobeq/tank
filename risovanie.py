@@ -41,11 +41,9 @@ def fps():
     screen.blit(two2, zakona.two)
 
     #riss pula
-    if zakona.pula is not None:
-        #
-        gradpula= pygame.transform.rotate(pula, zakona.pula["grad"])
-        screen.blit(gradpula, zakona.pula["rect"])
-        pygame.draw.rect(screen, [200,2,20], zakona.pula["rect"], 1)
+    for pul in zakona.puli:
+        gradpula= pygame.transform.rotate(pula, pul["grad"])
+        screen.blit(gradpula, pul["rect"])
 
 
 
