@@ -13,7 +13,8 @@ puli = []
 hp1 = 3
 hp2 = 3
 
-pulu = 6
+pulu1 = 6
+pulu2 = 6
 
 
 def granici(tank):
@@ -42,6 +43,7 @@ def left_right_tank(move, tank):
 
 
 def vestrel(gradus, tank):
+    global pulu
     if gradus == 90:
         pulagrad = 90
         pularect = pygame.Rect(tank.left - 30, tank.centery - 10, 30, 20)
@@ -58,7 +60,7 @@ def vestrel(gradus, tank):
         pulagrad = 180
         pularect.top = tank.bottom
         pularect.centerx = tank.centerx
-
+    pulu-=1
     pula = {"rect": pularect, "grad": pulagrad}
     puli.append(pula)
 
@@ -75,4 +77,4 @@ def polet_puli():
             r.y += 6
         if b["grad"] == 0:
             r.y -= 6
-    print(len(puli))
+    #print(len(puli))

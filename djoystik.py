@@ -1,12 +1,16 @@
 import pygame,zakona
 
-pygame.key.set_repeat(70)
+#pygame.key.set_repeat(70)
 
 
 
 
 def xbox():
     events = pygame.event.get()
+    for e in events:
+        if e.type == pygame.KEYDOWN and e.key == pygame.K_RCTRL:
+
+            zakona.vestrel(zakona.grad1, zakona.one)
     keys=pygame.key.get_pressed()
     if keys[pygame.K_UP]:
         zakona.grad1=0
@@ -20,8 +24,8 @@ def xbox():
     elif  keys[pygame.K_LEFT]:
         zakona.grad1 = 90
         zakona.left_right_tank(-3,zakona.one)
-    elif pygame.key.get_mods() & pygame.KMOD_RCTRL:
-        zakona.vestrel(zakona.grad1,zakona.one)
+
+
 
 
 
@@ -37,8 +41,9 @@ def xbox():
     elif keys[pygame.K_a]:
         zakona.grad2 = 90
         zakona.left_right_tank(-3, zakona.two)
-    elif pygame.key.get_mods() & pygame.KMOD_LSHIFT:
-        zakona.vestrel(zakona.grad2, zakona.two)
+    for e in events:
+        if e.type == pygame.KEYDOWN and e.key == pygame.K_LSHIFT:
+            zakona.vestrel(zakona.grad2, zakona.two)
 
 
 
