@@ -43,26 +43,37 @@ def left_right_tank(move, tank):
 
 
 def vestrel(gradus, tank):
-    global pulu
-    if gradus == 90:
-        pulagrad = 90
-        pularect = pygame.Rect(tank.left - 30, tank.centery - 10, 30, 20)
-    if gradus == -90:
-        pulagrad = -90
-        pularect = pygame.Rect(tank.right, tank.centery - 10, 30, 20)
-    if gradus == 0:
-        pulagrad = 0
-        pularect = pygame.Rect(0, 0, 20, 30)
-        pularect.bottom = tank.top
-        pularect.centerx = tank.centerx
-    if gradus == 180:
-        pularect = pygame.Rect(0, 0, 20, 30)
-        pulagrad = 180
-        pularect.top = tank.bottom
-        pularect.centerx = tank.centerx
-    pulu-=1
-    pula = {"rect": pularect, "grad": pulagrad}
-    puli.append(pula)
+    global pulu1,pulu2
+    if tank is one and pulu1 > 0:
+        canstrel=True
+    else:
+        canstrel =False
+
+    if canstrel ==True:
+        if gradus == 90:
+            pulagrad = 90
+            pularect = pygame.Rect(tank.left - 30, tank.centery - 10, 30, 20)
+        if gradus == -90:
+            pulagrad = -90
+            pularect = pygame.Rect(tank.right, tank.centery - 10, 30, 20)
+        if gradus == 0:
+            pulagrad = 0
+            pularect = pygame.Rect(0, 0, 20, 30)
+            pularect.bottom = tank.top
+            pularect.centerx = tank.centerx
+        if gradus == 180:
+            pularect = pygame.Rect(0, 0, 20, 30)
+            pulagrad = 180
+            pularect.top = tank.bottom
+            pularect.centerx = tank.centerx
+        if tank == one:
+            pulu1 -= 1
+        if tank == two:
+            pulu2 -= 1
+
+
+        pula = {"rect": pularect, "grad": pulagrad}
+        puli.append(pula)
 
 
 def polet_puli():

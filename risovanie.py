@@ -57,11 +57,11 @@ def fps():
     for zd in dz2:
         screen.blit(hp2, [700 + q, 630])
         q+=50
-    puli = [*range(zakona.pulu)]
+    puli = [*range(zakona.pulu2)]
     for zd in puli:
         screen.blit(pula, [100 + q, 3])
         q += 50
-    puli2 = range(zakona.pulu)
+    puli2 = range(zakona.pulu1)
     q = 0
     for zd in puli2:
         screen.blit(pula, [700 - q, 630])
