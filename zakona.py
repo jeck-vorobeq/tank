@@ -45,11 +45,22 @@ def left_right_tank(move, tank):
 def vestrel(gradus, tank):
     global pulu1,pulu2
     if tank is one and pulu1 > 0:
-        canstrel=True
+        canstrel1 =True
     else:
-        canstrel =False
+        canstrel1 =False
 
-    if canstrel ==True:
+
+
+
+    if tank is two and pulu2 >0:
+        canstrel2 =True
+    else:
+        canstrel2 =False
+
+
+
+
+    if canstrel1== True or canstrel2==True:
         if gradus == 90:
             pulagrad = 90
             pularect = pygame.Rect(tank.left - 30, tank.centery - 10, 30, 20)

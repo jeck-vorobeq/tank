@@ -11,6 +11,9 @@ def xbox():
         if e.type == pygame.KEYDOWN and e.key == pygame.K_RCTRL:
 
             zakona.vestrel(zakona.grad1, zakona.one)
+        if e.type == pygame.QUIT:
+            exit()
+
     keys=pygame.key.get_pressed()
     if keys[pygame.K_UP]:
         zakona.grad1=0
