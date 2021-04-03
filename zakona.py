@@ -3,8 +3,8 @@ import pygame
 one = pygame.Rect(-10, 400, 58, 68)
 two = pygame.Rect(100, 400, 58, 68)
 
-baz1 = pygame.Rect(5, 4, 100, 40)
-baz2 = pygame.Rect(850, 630, 100, 40)
+baz2 = pygame.Rect(5, 4, 100, 40)
+baz1 = pygame.Rect(850, 630, 100, 40)
 
 grad1 = 0
 grad2 = 180
@@ -99,4 +99,13 @@ def polet_puli():
             r.y += 6
         if b["grad"] == 0:
             r.y -= 6
+def otduh():
+    global pulu1,pulu2
+    w = one.colliderect(baz1)
+    if w == 1:
+            pulu1 = 6
+    w = two.colliderect(baz2)
+    if w == 1:
+        pulu2 = 6
+
     #print(len(puli))
