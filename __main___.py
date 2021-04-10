@@ -5,5 +5,6 @@ while 1 == 1:
     djoystik.xbox()
     zakona.polet_puli()
     zakona.otduh()
+    zakona.popadanie()
     risovanie.fps()
 

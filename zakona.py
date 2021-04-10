@@ -43,24 +43,18 @@ def left_right_tank(move, tank):
 
 
 def vestrel(gradus, tank):
-    global pulu1,pulu2
+    global pulu1, pulu2
     if tank is one and pulu1 > 0:
-        canstrel1 =True
+        canstrel1 = True
     else:
-        canstrel1 =False
+        canstrel1 = False
 
-
-
-
-    if tank is two and pulu2 >0:
-        canstrel2 =True
+    if tank is two and pulu2 > 0:
+        canstrel2 = True
     else:
-        canstrel2 =False
+        canstrel2 = False
 
-
-
-
-    if canstrel1== True or canstrel2==True:
+    if canstrel1 == True or canstrel2 == True:
         if gradus == 90:
             pulagrad = 90
             pularect = pygame.Rect(tank.left - 30, tank.centery - 10, 30, 20)
@@ -82,7 +76,6 @@ def vestrel(gradus, tank):
         if tank == two:
             pulu2 -= 1
 
-
         pula = {"rect": pularect, "grad": pulagrad}
         puli.append(pula)
 
@@ -99,13 +92,24 @@ def polet_puli():
             r.y += 6
         if b["grad"] == 0:
             r.y -= 6
+
+
 def otduh():
-    global pulu1,pulu2
+    global pulu1, pulu2
     w = one.colliderect(baz1)
     if w == 1:
-            pulu1 = 6
+        pulu1 = 6
     w = two.colliderect(baz2)
     if w == 1:
         pulu2 = 6
 
-    #print(len(puli))
+
+def popadanie():
+    global hp1
+    for among in puli:
+
+        q = one.colliderect(among["rect"])
+        if q == 1:
+            hp1 -= 1
+            puli.remove(among)
+    print(hp1)
