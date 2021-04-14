@@ -1,5 +1,7 @@
 import pygame
 
+
+
 one = pygame.Rect(-10, 400, 58, 68)
 two = pygame.Rect(100, 400, 58, 68)
 
@@ -105,11 +107,22 @@ def otduh():
 
 
 def popadanie():
-    global hp1
+    global hp1, hp2
     for among in puli:
 
         q = one.colliderect(among["rect"])
         if q == 1:
             hp1 -= 1
             puli.remove(among)
-    print(hp1)
+
+        q = two.colliderect(among["rect"])
+        if q == 1:
+            hp2 -= 1
+            puli.remove(among)
+
+    if hp1 == 0:
+        print("GAME OVER GREEN")
+
+    if hp2 == 0:
+        print("GAME OVER RED")
+
