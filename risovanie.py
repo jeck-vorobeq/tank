@@ -69,8 +69,27 @@ def fps():
     for zd in puli2:
         screen.blit(pula, [700 - q, 630])
         q += 50
+
+
+    if zakona.hp1 == 0 and zakona.hp2 == 0:
+        over = font.render("GAME OVER TANKS", True, [0, 0, 255])
+        screen.blit(over, [90, 250])
+        pygame.display.flip()
+        time.sleep(5)
+        exit()
+
+
+
     if zakona.hp1 == 0:
-        over = font.render("GAME OVER GREEN", True, [255, 0, 0])
+        over = font.render("GAME OVER GREEN", True, [0, 255, 0])
+        screen.blit(over,[90,250])
+        pygame.display.flip()
+        time.sleep(5)
+        exit()
+
+
+    if zakona.hp2 == 0:
+        over = font.render("GAME OVER RED", True, [255, 0, 0])
         screen.blit(over,[100,250])
         pygame.display.flip()
         time.sleep(5)
